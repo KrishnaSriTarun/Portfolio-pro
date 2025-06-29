@@ -1,57 +1,6 @@
 import React from 'react';
 
-const projects = [
-  {
-    title: 'NeuroSpeak',
-    description:
-      'Developed an AI-driven communication improvement tool that enhances public speaking skills through real-time analysis. Includes facial expression analysis and grammar/tone feedback.',
-    image: 'NeuroSpeak.png',
-    live_link: 'https://neurospeak.onrender.com/',
-    repo_link: 'https://github.com/Vanshjais1777/NeuroSpeak',
-  },
-  {
-    title: 'SKILL-SPHERE',
-    description:
-      "AI-driven internship/job platform with an AI chatbot powered by Gemini API to recommend jobs based on user skills. Runner-up at SIH 2024 (top 2.4% nationally).",
-    image: 'SkillSphere.png',
-    live_link: 'https://titans-mx-frontend.onrender.com/',
-    repo_link: 'https://github.com/Vanshjais1777/Titans_MX',
-  },
-  {
-    title: 'Biryani Wala – Restaurant Website',
-    description:
-      'Responsive website for a local cafe with an interactive menu and vibrant visuals. Built with React, TypeScript, Tailwind, and Netlify.',
-    image: 'Biryani Wala.png',
-    live_link: 'https://gkpbiryaniwala.netlify.app/',
-    repo_link: 'https://github.com/Vanshjais1777/Gkp-Biryani-Wala',
-  },
-  {
-    title: 'Forever E-commerce',
-    description:
-      'Full-stack e-commerce platform with JWT auth, product filtering, cart/order management, and admin dashboard. MERN stack with responsive design.',
-    image: 'Forever.png',
-    live_link: 'https://forever-fullstack-2-o-frontend.onrender.com/',
-    repo_link: 'https://github.com/Vanshjais1777/Forever-Fullstack-2.O',
-  },
-  {
-    title: 'Roomi AI',
-    description:
-      'AI-powered interior design assistant with Clerk-auth login. Placeholder for image-gen APIs. Frontend built using React and Tailwind.',
-    image: 'Roomi AI.png',
-    live_link: 'https://roomi-ai.vercel.app/',
-    repo_link: 'https://github.com/Vanshjais1777/Roomi-AI',
-  },
-  {
-    title: 'AirSwitch – IoT Appliance Controller',
-    description:
-      'Smart home appliance controller using React, Firebase, and NodeMCU. Real-time device switching and control with relay integration.',
-    image: 'AirSwitch.png',
-    live_link: 'https://airswitch-fullstack-frontend.onrender.com',
-    repo_link: 'https://github.com/Vanshjais1777/AirSwitch-Fullstack',
-  },
-];
-
-const Projects = () => (
+const Projects = ({ projects }) => (
   <section className="py-16 px-4 bg-white" id="projects">
     <div className="max-w-6xl mx-auto">
       <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">

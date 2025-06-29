@@ -1,39 +1,12 @@
 import React from 'react';
 
-const experiencesArray = [
-  {
-    title: 'Founder & Full Stack Developer',
-    company: 'Nayi Soch Solutions',
-    date: 'June 2025 – Present',
-    description:
-      'Completed 2 projects, Developed a Admin Pannel of a Coaching Classes in React.js and Firebase, with features like Dashboard, Student management and Batches management. Showcasing my skills and projects.',
-    Website: 'https://ns-solutions.netlify.app',
-  },
-  {
-    title: 'Full Stack Developer Intern',
-    company: 'Levitation Infotech',
-    date: 'Jan 2025 – Mar 2025',
-    description:
-      'Worked on an RMS project using the MERN stack. Debugged and fixed major issues, optimized a scalable API backend improving performance by 20%. Integrated React Hook Form with Zod validation in complex forms, boosting validation efficiency by 30%. Gained strong teamwork skills in a collaborative, fast-paced environment.',
-    certification: 'https://drive.google.com/file/d/1MbXNH0ZbjdrehjFi5IEXgwRKB1dBWXfM/view?usp=sharing',
-  },
-  {
-    title: 'Smart India Hackathon Finalist',
-    company: 'Govt. of India (SIH 2024)',
-    date: 'Dec 2024',
-    description:
-      'Developed SkillSphere, a job recommendation platform powered by AI. Placed in the top 2.4% nationally.',
-    certification: 'https://drive.google.com/file/d/13yR7_PVJLioJFd2sc6GLCWMJIT8o1nxe/view?usp=sharing',
-  },
-];
-
-const Experiences = () => {
+const Experiences = ({ experiences }) => {
   return (
     <section className="py-12 px-4 bg-white" id="experience">
       <h2 className="text-3xl font-bold mb-10 text-center text-gray-900">Experience</h2>
 
       <div className="relative border-l-4 border-blue-500 pl-6 space-y-10 max-w-3xl mx-auto">
-        {experiencesArray.map((exp, index) => (
+        {experiences.map((exp, index) => (
           <div key={index} className="relative">
             {/* Dot marker */}
             <div className="absolute -left-3 w-6 h-6 bg-blue-500 rounded-full border-4 border-white"></div>

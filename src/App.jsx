@@ -1,36 +1,32 @@
-import About from "./Components/About"
-import Header from "./Components/Header"
-import Hero from "./Components/Hero"
+import React from 'react';
+import './index.css';
+
+import Header from './Components/Header';
+import Hero from './Components/Hero';
+import About from './Components/About';
 import Skills from './Components/Skills';
 import Experiences from './Components/Experiences';
-import Projects from "./Components/Projects";
+import Projects from './Components/Projects';
 import Contact from './Components/Contact';
 import Footer from './Components/Footer';
-import './index.css'
+
+import portfolioData from './data/data';
+
 function App() {
+  const { hero, about, skills, experiences, projects, contact } = portfolioData;
 
   return (
     <>
-    <Header/>
-    <Hero
-        name="Vansh"
-        role="Full Stack Developer"
-        intro="I build elegant and scalable web experiences using MERN stack. Let's bring your ideas to life!"
-        imageSrc="/me.png"
-        resumeLink="https://drive.google.com/file/d/1H76Z5LRdEZ8M40dBoqJC63yijvMiYb8Y/view?usp=drive_link"
-        githubLink="https://github.com/vanshjais1777"
-        linkedinLink="https://www.linkedin.com/in/vansh-jaiswal-806271218"
-        phoneNo="+916386169658"
-        emailLink="mailto: vanshjais1777@gmail.com"
-      />
-      <About/>
-      <Skills/>
-      <Experiences/>
-      <Projects/>
-      <Contact/>
-      <Footer/>
+      <Header />
+      <Hero {...hero} />
+      <About {...about} />
+      <Skills skills={skills} />
+      <Experiences experiences={experiences} />
+      <Projects projects={projects} />
+      <Contact {...contact} />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
