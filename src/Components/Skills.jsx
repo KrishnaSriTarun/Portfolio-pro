@@ -26,23 +26,23 @@ const skills = [
 
 const Skills = () => {
       return (
-            <section className="py-12 px-4 text-center bg-white dark:bg-gray-950" id="skills">
-                  <h2 className="text-3xl font-bold mb-10 text-gray-900 dark:text-white">Skills</h2>
+            <section className="py-16 px-4 text-center bg-white" id="skills">
+                  <h2 className="text-3xl font-bold mb-12 text-gray-900">Skills</h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                         {skills.map(({ icon, label, level }) => (
                               <div
                                     key={label}
-                                    className="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-md flex flex-col items-center"
+                                    className="bg-gray-100 p-6 rounded-xl shadow-md flex flex-col items-center"
                               >
                                     <div className="text-5xl text-blue-500 mb-3">{icon}</div>
-                                    <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2">{label}</h3>
-                                    <div className="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-2">
+                                    <h3 className="text-lg font-semibold text-gray-800 mb-2">{label}</h3>
+                                    <div className="w-full bg-gray-300 rounded-full h-2">
                                           <div
                                                 className="bg-blue-500 h-2 rounded-full transition-all duration-500"
                                                 style={{ width: `${level}%` }}
                                           ></div>
                                     </div>
-                                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">{level}% proficiency</p>
+                                    <p className="text-sm text-gray-600 mt-1">{level}% proficiency</p>
                               </div>
                         ))}
                   </div>

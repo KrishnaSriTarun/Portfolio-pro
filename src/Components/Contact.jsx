@@ -9,16 +9,18 @@ const Contact = () => {
       const handleChange = (e) => {
             setFormData({ ...formData, [e.target.name]: e.target.value });
       };
-
       const handleSubmit = (e) => {
             e.preventDefault();
             setLoading(true);
-            emailjs.send(
-                  'service_88cpp3q',
-                  'template_haurqf2',
-                  formData,
-                  'V9xPwtjuX7uzSbXRf'
-            )
+            
+            
+            emailjs
+                  .send(
+                        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                        formData,
+                        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+                  )
                   .then(() => {
                         toast.success('Message sent successfully!');
                         setFormData({ name: '', email: '', message: '' });
@@ -31,10 +33,10 @@ const Contact = () => {
       };
 
       return (
-            <section className="py-12 px-4 bg-white dark:bg-gray-950" id="contact">
+            <section className="py-16 px-4 bg-white" id="contact">
                   <div className="max-w-2xl mx-auto text-center">
-                        <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Contact Me</h2>
-                        <form onSubmit={handleSubmit} className="space-y-4">
+                        <h2 className="text-3xl font-bold mb-8 text-gray-900">Contact Me</h2>
+                        <form onSubmit={handleSubmit} className="space-y-5">
                               <input
                                     type="text"
                                     name="name"
@@ -42,7 +44,7 @@ const Contact = () => {
                                     value={formData.name}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white"
+                                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                               />
                               <input
                                     type="email"
@@ -51,7 +53,7 @@ const Contact = () => {
                                     value={formData.email}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white"
+                                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                               />
                               <textarea
                                     name="message"
@@ -60,11 +62,11 @@ const Contact = () => {
                                     value={formData.message}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white"
+                                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                               ></textarea>
                               <button
                                     type="submit"
-                                    className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
+                                    className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition duration-300"
                               >
                                     {loading ? 'Sending...' : 'Send Message'}
                               </button>
